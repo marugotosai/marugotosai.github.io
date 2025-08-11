@@ -47,9 +47,216 @@
     </head>
     <body>
         <header id="header" class="desktop"></header>
+        <header id="header-mobile" class="mobile">
+            <!-- ========== Mobile Beautiful Overlay Menu (with JS) ========== -->
+            <div class="hamburgur" role="banner">
+                <!-- トグルボタン（ハンバーガー） -->
+                <button class="hamburgur-btn" id="hbBtn" aria-controls="hbMenu" aria-expanded="false" aria-label="メニューを開く">
+                <span class="hamburgur-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+                </button>
+
+                <!-- オーバーレイ全体 -->
+                <div class="hamburgur-layer" id="hbLayer" hidden>
+                <!-- 背景 -->
+                <div class="hamburgur-backdrop" id="hbBackdrop"></div>
+
+                <!-- フルスクリーンメニュー -->
+                <nav class="hamburgur-menu" id="hbMenu" aria-label="モバイルメニュー">
+                    <div class="hamburgur-head">
+                    <span class="hamburgur-title"></span>
+                    <!-- ここを Font Awesome に変更 -->
+                    <button class="hamburgur-close" id="hbClose" aria-label="閉じる">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                    </button>
+                    </div>
+
+                    <ul class="hamburgur-list" id="hbList">
+                        <li><a href="/about/index.html"><b>ABOUT</b><small>まるごと祭について</small></a></li>
+                        <li><a href="/contents/index.html"><b>CONTENTS</b><small>イベントコンテンツ</small></a></li>
+                        <li><a href="/timetable/index.html"><b>TIMETABLE</b><small>スケジュール</small></a></li>
+                        <li><a href="/map/index.html"><b>MAP</b><small>会場マップ</small></a></li>
+                        <li><a href="/access/index.html"><b>ACCESS</b><small>会場アクセス</small></a></li>
+                        <li><a href="/index.html#overview"><b>OVERVIEW</b><small>開催概要</small></a></li>
+                        <li><a href="/info/index.html"><b>INFO</b><small>注意事項</small></a></li>
+                        <li class="accent"><a href="/tickets/index.html"><b>TICKETS</b><small>チケット</small></a></li>
+                    </ul>
+
+                    <footer class="hamburgur-foot">
+                        <small>©︎まるごと祭2025実行委員会</small>
+                    </footer>
+                </nav>
+                </div>
+            </div>
+
+            <style>
+                /* ============== 基本設定（モバイル専用） ============== */
+                .hamburgur{ position:relative; z-index:2000; }
+                @media (min-width:1024px){ .hamburgur{ display:none; } }
+
+                /* ============== トグルボタン（右上） ============== */
+                .hamburgur-btn{
+                position:fixed; top:38px; right:14px; width:46px; height:46px;
+                display:grid; place-items:center; border:none; cursor:pointer;
+                background:rgba(255,255,255,0); border-radius:10px;
+                -webkit-tap-highlight-color:transparent;
+                }
+                .hamburgur-icon{ width:22px; height:18px; position:relative; display:block; }
+                .hamburgur-icon i{
+                position:absolute; inset:auto 0; height:2px; background:#333; border-radius:2px;
+                transform-origin:center; transition:transform .25s ease, opacity .2s ease, top .25s ease;
+                }
+                .hamburgur-icon i:nth-child(1){ top:0; }
+                .hamburgur-icon i:nth-child(2){ top:8px; }
+                .hamburgur-icon i:nth-child(3){ top:16px; }
+
+                /* ============== オーバーレイ層（全体） ============== */
+                .hamburgur-layer{ position:fixed; inset:0; z-index:1999; }
+
+                /* 背景 */
+                .hamburgur-backdrop{
+                position:absolute; inset:0;
+                background: linear-gradient(180deg, rgba(255,255,255,.7), rgba(255,255,255,.4));
+                backdrop-filter: blur(10px) saturate(110%);
+                opacity:0; transition:opacity .28s ease;
+                }
+                .hamburgur-layer.is-open .hamburgur-backdrop{ opacity:1; }
+
+                /* ============== メニュー本体（フルスクリーン） ============== */
+                .hamburgur-menu{
+                position:absolute; inset:0; display:flex; flex-direction:column; color:#fff;
+                transform:translateY(10px); opacity:0; transition:transform .3s ease, opacity .3s ease;
+                }
+                .hamburgur-layer.is-open .hamburgur-menu{ transform:none; opacity:1; }
+
+                .hamburgur-head{
+                height:60px; display:flex; align-items:center; justify-content:space-between;
+                padding:0 14px; /* ← 右端14pxでハンバーガーと揃える */
+                padding-top: 30px;
+                border-bottom:1px solid rgba(255,255,255,.12);
+                }
+                .hamburgur-title{ font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+
+                /* Closeボタン：ハンバーガーと同サイズ＆右端位置を統一 */
+                .hamburgur-close{
+                width:46px; height:46px; display:grid; place-items:center;
+                background:transparent; border:none; color:#333; border-radius:10px; cursor:pointer;
+                -webkit-tap-highlight-color:transparent;
+                }
+                .hamburgur-close i{ font-size:22px; line-height:1; }
+                .hamburgur-close:active{ background:rgba(0,0,0,.06); }
+
+                /* リスト */
+                .hamburgur-list{
+                list-style:none; margin:0; padding:8px 10px 20px; overflow:auto; -webkit-overflow-scrolling:touch;
+                display:grid; gap:6px;
+                }
+                .hamburgur-list li{
+                --bg: rgba(255,255,255,.06);
+                --bd: rgba(255,255,255,.14);
+                border:1px solid var(--bd); background:var(--bg); border-radius:16px;
+                transform:translateY(10px); opacity:0;
+                animation: hbItem .45s cubic-bezier(.2,.7,.2,1) forwards;
+                }
+                .hamburgur-list li:nth-child(1){ animation-delay:.05s; }
+                .hamburgur-list li:nth-child(2){ animation-delay:.09s; }
+                .hamburgur-list li:nth-child(3){ animation-delay:.13s; }
+                .hamburgur-list li:nth-child(4){ animation-delay:.17s; }
+                .hamburgur-list li:nth-child(5){ animation-delay:.21s; }
+                .hamburgur-list li:nth-child(6){ animation-delay:.25s; }
+                .hamburgur-list li:nth-child(7){ animation-delay:.29s; }
+                .hamburgur-list li:nth-child(8){ animation-delay:.33s; }
+
+                @keyframes hbItem{ to{ transform:none; opacity:1; } }
+
+                .hamburgur-list a{
+                display:flex; align-items:baseline; gap:10px; justify-content:space-between;
+                padding:16px 14px; text-decoration:none; color:#333;
+                }
+                .hamburgur-list a b{ font-size:18px; letter-spacing:.02em; }
+                .hamburgur-list a small{ font-size:14px;}
+
+                /* いちばん目立たせたい項目 */
+                .hamburgur-list li.accent{
+                --bg: linear-gradient(180deg, rgba(255, 199, 2, 0.8), rgba(255, 199, 2, 0.8)0);
+                --bd: transparent;
+                }
+                .hamburgur-list li:has(a:active){ filter:brightness(1.05); }
+
+                /* フッター */
+                .hamburgur-foot{
+                margin-top:auto; padding:12px 16px; border-top:1px solid rgba(255,255,255,.12);
+                text-align:center; opacity:.7;
+                }
+
+                /* ハンバーガー → × 変形（開いている時） */
+                .hamburgur-btn[aria-expanded="true"] .hamburgur-icon i:nth-child(1){ top:8px; transform:rotate(45deg); }
+                .hamburgur-btn[aria-expanded="true"] .hamburgur-icon i:nth-child(2){ opacity:0; }
+                .hamburgur-btn[aria-expanded="true"] .hamburgur-icon i:nth-child(3){ top:8px; transform:rotate(-45deg); }
+
+                /* スマホではフォーカス装飾なし */
+                @media (pointer: coarse) {
+                .hamburgur a:focus, .hamburgur-btn:focus, .hamburgur-close:focus,
+                .hamburgur a:focus-visible, .hamburgur-btn:focus-visible, .hamburgur-close:focus-visible {
+                    outline: none !important;
+                }
+                }
+                /* タップ時の灰色ハイライトも消す */
+                .hamburgur a, .hamburgur button { -webkit-tap-highlight-color: transparent; }
+
+                /* 背景固定用 */
+                .hamburgur-noscr{ overflow:hidden; height:100dvh; }
+            </style>
+
+            <script>
+                (() => {
+                const btn = document.getElementById('hbBtn');
+                const layer = document.getElementById('hbLayer');
+                const menu = document.getElementById('hbMenu');
+                const closeBtn = document.getElementById('hbClose');
+                const list = document.getElementById('hbList');
+
+                const open = () => {
+                    layer.hidden = false;
+                    requestAnimationFrame(() => {
+                    layer.classList.add('is-open');
+                    btn.setAttribute('aria-expanded', 'true');
+                    document.body.classList.add('hamburgur-noscr');
+                    // アニメ再起動
+                    list.querySelectorAll('li').forEach(li => {
+                        li.style.animation = 'none'; li.getBoundingClientRect(); li.style.animation = '';
+                    });
+                    });
+                };
+
+                const close = () => {
+                    const items = Array.from(list.querySelectorAll('li')).reverse();
+                    items.forEach((li, idx) => {
+                    li.style.animation = 'none'; li.getBoundingClientRect();
+                    li.style.animation = `hbItem .35s cubic-bezier(.2,.7,.2,1) reverse forwards`;
+                    li.style.animationDelay = `${idx * 0.04}s`;
+                    });
+                    btn.setAttribute('aria-expanded', 'false');
+                    layer.classList.remove('is-open');
+                    const total = items.length * 40 + 350;
+                    setTimeout(() => {
+                    layer.hidden = true;
+                    document.body.classList.remove('hamburgur-noscr');
+                    items.forEach(li => { li.style.animationDelay = ''; });
+                    }, total);
+                };
+
+                btn.addEventListener('click', () => (btn.getAttribute('aria-expanded') === 'true') ? close() : open());
+                closeBtn.addEventListener('click', close);
+                layer.addEventListener('click', (e) => { if (e.target === layer || e.target.id === 'hbBackdrop') close(); });
+                document.addEventListener('keydown', (e) => { if (!layer.hidden && e.key === 'Escape') close(); });
+                menu.addEventListener('click', (e) => { if (e.target.closest('a')) close(); });
+                window.addEventListener('resize', () => { if (!layer.hidden) close(); });
+                })();
+            </script>
+        </header>
         <div class="st-wrapper">
             <div class="top-logotype mobile">
-                <a href="/index.html"><img src="assets/marugotosai2025-logotype.svg" alt="まるごと祭2025"></a>
+                <a href="/index.html"><img src="/assets/marugotosai2025-logotype.svg" alt="まるごと祭2025"></a>
             </div>
             <div class="top-wrapper">
                 <div class="top-bg-image">
@@ -243,10 +450,10 @@
                     <div class="section map">
                         
                     </div>
-                    <div class="section news">
-                        
+                    <div class="section news" id="news">
+
                     </div>
-                    <div class="section overview">
+                    <div class="section overview" id="overview">
                         <div class="overview-inner">
                             <div class="overview-title">
                                 <h2 class="section-title">OVERVIEW</h2>
@@ -365,19 +572,21 @@
                 });
         </script>
         <script>
-            const lenis = new Lenis({
-            duration: 1.1, // ゆっくりにしたい場合は数値を大きく
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // デフォルト
-            smooth: true,
-            smoothTouch: true,
-            });
+            if (window.innerWidth > 768) { // 768px以上なら有効
+                const lenis = new Lenis({
+                    duration: 1.1,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                    smooth: true,
+                    smoothTouch: true,
+                });
 
-            function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
+                function raf(time) {
+                    lenis.raf(time);
+                    requestAnimationFrame(raf);
+                }
+
+                requestAnimationFrame(raf);
             }
-
-            requestAnimationFrame(raf);
         </script>
         <!-- Footer currentpage -->
         <script>
