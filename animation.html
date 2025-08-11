@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Blob Morph with Easing</title>
+  <style>
+    body {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    svg {
+      width: 200px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<svg viewBox="0 0 142 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path id="blob" fill="#F8F8F8"
+    d="M142 77C142 119.526 107.596 154 65.1575 154C22.7185 154 -5.53612 120.12 0.917091 93.016C7.3703 65.912 22.7185 0 65.1575 0C107.596 0 142 34.4741 142 77Z"/>
+</svg>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+  const path = document.querySelector('#blob');
+
+  const shape1 = "M142 77C142 119.526 107.596 154 65.1575 154C22.7185 154 -5.53612 120.12 0.917091 93.016C7.3703 65.912 22.7185 0 65.1575 0C107.596 0 142 34.4741 142 77Z";
+  const shape2 = "M116 75.5C116 117.197 54.1381 151 12.3991 151C-29.34 151 47.6817 113.573 47.6817 71.876C47.6817 30.1785 -1.31428 0 40.4248 0C82.1638 0 116 33.8025 116 75.5Z";
+
+  let toggled = false;
+
+  function animateShape() {
+    anime({
+      targets: path,
+      d: [{ value: toggled ? shape1 : shape2 }],
+      duration: 1500,
+      easing: 'easeInOutSine', // ⬅️ 緩急をつける
+      complete: () => {
+        toggled = !toggled;
+        setTimeout(animateShape, 1000); // 1秒待機
+      }
+    });
+  }
+
+  animateShape();
+</script>
+
+</body>
+</html>
