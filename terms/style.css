@@ -1,0 +1,27 @@
+.st-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 22px;
+    margin-bottom: 58px;
+}
+
+dt {
+    font-weight: bold;
+    margin-bottom: 8px;
+    margin-left: 0px;
+}
+
+dd {
+    font-size: 14px;
+    margin-bottom: 16px;
+    margin-left: 12px;
+}
+
+@media screen and (min-width: 1024px) {
+    dt , dd {
+        margin-left: 22px;
+    }
+    
+}
