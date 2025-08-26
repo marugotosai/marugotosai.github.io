@@ -411,6 +411,30 @@
                     </div>
                 </div>
                 <div class="st-content-inner">
+                    <div class="center-container" style="background-color: #f5f5f5;">
+                        <div class="marquee">
+                            <div class="marquee__track" id="track">
+                            <img src="/assets/photo/top-marquee01.jpg" alt="">
+                            <img src="/assets/photo/top-marquee02.jpg" alt="">
+                            <img src="/assets/photo/top-marquee03.jpg" alt="">
+                            <img src="/assets/photo/top-marquee04.jpg" alt="">
+                            <img src="/assets/photo/top-marquee05.jpg" alt="">
+                            <img src="/assets/photo/top-marquee06.jpg" alt="">
+                            <img src="/assets/photo/top-marquee07.jpg" alt="">
+                            <img src="/assets/photo/top-marquee08.jpg" alt="">
+                            <img src="/assets/photo/top-marquee09.jpg" alt="">
+                            <img src="/assets/photo/top-marquee10.jpg" alt="">
+                            <img src="/assets/photo/top-marquee11.jpg" alt="">
+                            <img src="/assets/photo/top-marquee12.jpg" alt="">
+                            <img src="/assets/photo/top-marquee13.jpg" alt="">
+                            <img src="/assets/photo/top-marquee14.jpg" alt="">
+                            <img src="/assets/photo/top-marquee15.jpg" alt="">
+                            <img src="/assets/photo/top-marquee16.jpg" alt="">
+                            <img src="/assets/photo/top-marquee17.jpg" alt="">
+                            <img src="/assets/photo/top-marquee18.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
                     <div class="section about">
                         <div class="about-inner">
                             <div class="about-title">
@@ -423,9 +447,11 @@
                                 </div>
                             </div>
                             <div class="about-text">
-                                <h3>Soul of Tech</h3>
-                                <h4>つくることは、いきること。</h4>
-                                <div class="about-text-inner">
+                                <div class="about-text-title mask-bg">
+                                    <h3>Soul of Tech</h3>
+                                    <h4>つくることは、いきること。</h4>
+                                </div>
+                                <div class="about-text-inner mask-bg">
                                     <p>「まるごと祭」は、神山まるごと高専が年に一度開催する特別な高専祭。 学生とスタッフが一丸となって作り上げるのは、テクノロジー体験型コンテンツやアート作品、授業の成果物、物販・飲食、ステージ発表など、五感をくすぐる多彩なプログラム。 山あいの自然、創造あふれる学び、そして人々の温かさ──神山まるごと高専の魅力を“まるごと”感じられる2日間。ここでしか出会えない発見と感動を、あなたもぜひ体験してください。</p>
                                 </div>
                             </div>
@@ -525,7 +551,7 @@
                                 </div>
                             </div>
                             <div class="overview-contents">
-                                <div class="overview-logotype">
+                                <div class="overview-logotype mask-bg">
                                     <img src="/assets/marugotosai2025-logotype.svg" alt="まるごと祭2025">
                                 </div>
                                 <hr class="overview-divider">
@@ -533,9 +559,11 @@
                                     <div class="overview-contents-title mask-bg white">
                                         <p>開催日時</p>
                                     </div>
-                                    <p class="date" style="font-size: 24px;">2025.10.25 - 10.26</p>
-                                    <p class="time" style="font-size: 20px;">開場 10:00 / 閉場 20:00</p>
-                                    <p class="lasttime" style="font-size: 15px;">(最終入場受付18:00)</p>
+                                    <div class="mask-bg">
+                                        <p class="date" style="font-size: 24px; text-align: center;">2025.10.25 - 10.26</p>
+                                        <p class="time" style="font-size: 20px; text-align: center;">開場 10:00 / 閉場 20:00</p>
+                                        <p class="lasttime" style="font-size: 15px; text-align: center;">(最終入場受付18:00)</p>
+                                    </div>
                                 </div>
                                 <hr class="overview-divider">
                                 <div class="overview-block overview-place">
@@ -850,6 +878,49 @@
             });
 
             targets.forEach(el => io.observe(el));
+        </script>
+        <script>
+            (function(){
+            const track = document.getElementById('track');
+
+            // 同じ画像セットを複製して後ろに追加
+            const clone = track.cloneNode(true);
+            while (clone.firstElementChild) {
+                track.appendChild(clone.firstElementChild);
+            }
+
+            // 各画像にランダム傾き（-4°〜+4°）
+            const imgs = track.querySelectorAll('img');
+            imgs.forEach(img => {
+                const rot = (Math.random() * 8) - 4;
+                img.style.setProperty('--rot', rot.toFixed(2) + 'deg');
+            });
+
+            // 読み込み後にアニメ初期化（ちらつき防止）
+            let loaded = 0;
+            imgs.forEach(img=>{
+                if (img.complete) { loaded++; }
+                else {
+                img.addEventListener('load', ()=>{
+                    loaded++;
+                    if (loaded === imgs.length) refreshAnimation();
+                }, {once:true});
+                }
+            });
+            if (loaded === imgs.length) refreshAnimation();
+
+            function refreshAnimation(){
+                const current = getComputedStyle(track).animation;
+                track.style.animation = 'none';
+                requestAnimationFrame(()=>{ track.style.animation = current; });
+            }
+
+            let t;
+            addEventListener('resize', ()=>{
+                clearTimeout(t);
+                t = setTimeout(refreshAnimation, 120);
+            });
+            })();
         </script>
     </body>
 </html>
