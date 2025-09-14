@@ -1,0 +1,34 @@
+.st-main-contents {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333333;
+    padding-bottom: 128px;
+}
+
+.st-main-contents h2 {
+    font-size: 42px;
+}
+
+.tickets-p {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.red {
+    color: #ff3800;
+}
+
+.qr-code {
+    width: 208px;
+    height: 208px;
+    margin-top: 16px;
+}
+
+.line-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
