@@ -285,3 +285,8 @@
     font-size: 16px;
 }
 
+.qa-item a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: underline;
+}
