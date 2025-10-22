@@ -855,6 +855,14 @@ svg path{
     height: auto;
 }
 
+.kanniimg {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
 .anim-box.poyopoyo {
   animation: poyopoyo 2s ease-out infinite;
   opacity: 1;
