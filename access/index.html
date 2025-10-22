@@ -43,6 +43,9 @@
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 
+        <!-- Lightbox2 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.css" integrity="sha512-DKdRaC0QGJ/kjx0U0TtJNCamKnN4l+wsMdION3GG0WVK6hIoJ1UPHRHeXNiGsXdrmq19JJxgIubb/Z7Og2qJww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -305,16 +308,24 @@
                             <p style="margin: 24px 24px 22px;">※HOMEとOFFICEの距離は徒歩6分程度です。</p>
                             <div class="access">
                                 <h2 class="title">公共交通機関のご案内</h2>
+                                <a data-lightbox="kokyo" href="https://pbs.twimg.com/media/G3Vb_zfa4AAHf1q.jpg" class="kanni-link">
+                                    <img src="https://pbs.twimg.com/media/G3Vb_zfa4AAHf1q.jpg" alt="公共交通機関のご案内図" class="kanniimg">
+                                </a>
                                 <p>徳島県内から神山まるごと高専までの公共交通機関は、徳島バスのみとなります。JRを含むすべての電車は徒歩圏内の最寄り駅はありません。最も近い駅は「JR石井駅」で、車で約30分の距離です。来校の際は公共交通機関もしくはタクシーのご利用にご協力ください。</p>
                                 <h3 class="access-title">徳島バスをご利用の方</h3>
                                 <p><span style="font-weight: bold;">徳島駅前 13番のりば</span><br>神山線「西上角中」下車すぐ<br><br><span style="font-weight: bold;">徳島駅前 13番のりば</span><br>佐那河内線「西上角」下車、徒歩約5分</p>
                                 <p style="margin: 18px 0 4px 0;font-size: 14px;;">時刻表や路線図などは徳島バスのホームページをご覧ください。</p>
                                 <a href="https://www.tokubus.co.jp/" target="_blank" rel="noopener noreferrer" class="a-underline tokubus-link">徳島バス公式ホームページ</a>
+
                             </div>
                             <div class="parking">
                                 <h2 class="title">駐車場のご案内</h2>
-                                <p>駐車場を町内に複数箇所用意しています。Peatixでチケットを予約する際に一緒に駐車場の予約も行ってください。<br>駐車場のご案内は10月頃に公開予定です。</p>
-                                <p class="notice">※町内在住の方は駐車場の予約は不要です。町民専用駐車場を後日ご案内いたします。</p>
+                                <a data-lightbox="chushajo" href="https://pbs.twimg.com/media/G3UAInyaYAAZDSv.jpg" class="kanni-link">
+                                    <img src="https://pbs.twimg.com/media/G3UAInyaYAAZDSv.jpg" alt="駐車場のご案内図" class="kanniimg">
+                                </a>
+                                <p>駐車場を町内に複数箇所用意しています。Peatixでチケットを予約する際に一緒に駐車場の予約も行ってください。<br href="https://share.google/fz9tfTdl8HhpUmKTO" target="_blank">駐車場は<a href="https://share.google/fz9tfTdl8HhpUmKTO" target="_blank" style="text-decoration: underline; font-weight: bold;">鬼籠野公民館駐車場</a>をご利用ください。</p>
+                                <p>鬼籠野公民館駐車場は13時に入場制限を行います。以降は係員の指示に従って、第二駐車場以降の駐車場をご利用ください。13時よりも前でも駐車場が満車になった場合は同様の対応を行います。</p>
+                                <p class="notice">※町内在住の方は駐車場の予約は不要です。</p>
                             </div>
                             <div class="shuttle">
                                 <h2 class="title">駐車場からシャトルバスのご案内</h2>
@@ -416,5 +427,7 @@
             window.addEventListener('resize', syncHeight);
         </script>
         <script src="button.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js" integrity="sha512-KbRFbjA5bwNan6DvPl1ODUolvTTZ/vckssnFhka5cG80JVa5zSlRPCr055xSgU/q6oMIGhZWLhcbgIC0fyw3RQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </body>
 </html>
