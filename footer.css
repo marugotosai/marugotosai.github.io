@@ -156,6 +156,32 @@
     transition: color 0.5s ease;
 }
 
+.sponsored-by {
+    text-align: center;
+    color: #fff;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sponsored-by h3 {
+    width: 100%;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.sponsored-by a {
+    margin: 0 12px;
+}
+
+.sponsored-by img {
+    width: 280px;
+    height: auto;
+    margin-bottom: 18px;
+    border-radius: 4px;
+}
+
 .st-footer-copyright {
     color: #fff;
     font-size: 14px;
