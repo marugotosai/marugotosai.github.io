@@ -5,19 +5,19 @@
         <title>まるごと祭2025</title>
         <meta name="description" content="「まるごと祭」は、神山まるごと高専が年に一度開催する特別な高専祭。神山まるごと高専の魅力を“まるごと”感じられる2日間。ここでしか出会えない発見と感動を、あなたもぜひ体験してください。">
         <meta name="keywords" content="まるごと祭, まるごと祭2025, イベント, 文化祭, 高専祭, 神山まるごと高専, 徳島県, Tokushima, Kosen, 高専, 高校生">
-        <link rel="canonical" href="https://marugotosai.jp">
+        <link rel="canonical" href="https://marugotosai.jp/2025">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="header.css">
-        <link rel="stylesheet" href="footer.css">
-        <script src="main.js" defer></script>
+        <link rel="stylesheet" href="/2025/style.css">
+        <link rel="stylesheet" href="/2025/header.css">
+        <link rel="stylesheet" href="/2025/footer.css">
+        <script src="/2025/main.js" defer></script>
 
         <!-- OGP (SNSカード表示)-->
         <meta property="og:title" content="まるごと祭2025">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://marugotosai.jp/">
-        <meta property="og:image" content="https://marugotosai.jp/assets/ogp.png">
+        <meta property="og:url" content="https://marugotosai.jp/2025">
+        <meta property="og:image" content="https://marugotosai.jp/2025/assets/ogp.png">
         <meta property="og:description" content="「まるごと祭」は、神山まるごと高専が年に一度開催する特別な高専祭。神山まるごと高専の魅力を“まるごと”感じられる2日間。ここでしか出会えない発見と感動を、あなたもぜひ体験してください。">
         <meta property="og:site_name" content="まるごと祭2025">
         <meta property="og:locale" content="ja_JP">
@@ -29,14 +29,14 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="まるごと祭2025">
         <meta name="twitter:description" content="「まるごと祭」は、神山まるごと高専が年に一度開催する特別な高専祭。神山まるごと高専の魅力を“まるごと”感じられる2日間。ここでしか出会えない発見と感動を、あなたもぜひ体験してください。">
-        <meta name="twitter:image" content="https://marugotosai.jp/assets/ogp.png">
+        <meta name="twitter:image" content="https://marugotosai.jp/2025/assets/ogp.png">
         <meta name="twitter:site" content="@marugotosai">
         <meta name="twitter:creator" content="@marugotosai">
 
         <!-- Icon PWA-->
-        <link rel="icon" href="/assets/favicon.ico">
-        <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-        <link rel="manifest" href="/assets/manifest.json">
+        <link rel="icon" href="/2025/assets/favicon.ico">
+        <link rel="apple-touch-icon" href="/2025/assets/apple-touch-icon.png">
+        <link rel="manifest" href="/2025/assets/manifest.json">
         <meta name="theme-color" content="#ffffff">
 
         <!-- Font Awesome -->
@@ -59,225 +59,20 @@
     </head>
     <body>
         <header id="header" class="desktop"></header>
-        <header id="header-mobile" class="mobile">
-            <!-- ========== Mobile Beautiful Overlay Menu (with JS) ========== -->
-            <div class="hamburgur" role="banner">
-                <!-- トグルボタン（ハンバーガー） -->
-                <button class="hamburgur-btn" id="hbBtn" aria-controls="hbMenu" aria-expanded="false" aria-label="メニューを開く">
-                <span class="hamburgur-icon" aria-hidden="true"><i></i><i></i><i></i></span>
-                </button>
-
-                <!-- オーバーレイ全体 -->
-                <div class="hamburgur-layer" id="hbLayer" hidden>
-                <!-- 背景 -->
-                <div class="hamburgur-backdrop" id="hbBackdrop"></div>
-
-                <!-- フルスクリーンメニュー -->
-                <nav class="hamburgur-menu" id="hbMenu" aria-label="モバイルメニュー">
-                    <div class="hamburgur-head">
-                    <span class="hamburgur-title"></span>
-                    <!-- ここを Font Awesome に変更 -->
-                    <button class="hamburgur-close" id="hbClose" aria-label="閉じる">
-                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                    </button>
-                    </div>
-
-                    <ul class="hamburgur-list" id="hbList">
-                        <li><a href="/"><b>TOP</b><small>総合トップ</small></a></li>
-                        <li><a href="/about/"><b>ABOUT</b><small>まるごと祭について</small></a></li>
-                        <li><a href="/contents/"><b>CONTENTS</b><small>イベントコンテンツ</small></a></li>
-                        <li><a href="/access/"><b>ACCESS</b><small>会場アクセス</small></a></li>
-                        <li><a href="/#overview"><b>OVERVIEW</b><small>開催概要</small></a></li>
-                        <li><a href="/info/"><b>INFO</b><small>注意事項</small></a></li>
-                        <li class="accent"><a href="/tickets/"><b>TICKETS</b><small>チケット</small></a></li>
-                    </ul>
-
-                    <footer class="hamburgur-foot">
-                        <small>©︎まるごと祭2025実行委員会</small>
-                    </footer>
-                </nav>
-                </div>
-            </div>
-
-            <style>
-                /* ============== 基本設定（モバイル専用） ============== */
-                .hamburgur{ position:relative; z-index:2000; }
-                @media (min-width:1024px){ .hamburgur{ display:none; } }
-
-                /* ============== トグルボタン（右上） ============== */
-                .hamburgur-btn{
-                position:fixed; top:38px; right:14px; width:46px; height:46px;
-                display:grid; place-items:center; border:none; cursor:pointer;
-                background:rgba(255,255,255,0); border-radius:10px;
-                -webkit-tap-highlight-color:transparent;
-                }
-                .hamburgur-icon{ width:22px; height:18px; position:relative; display:block; }
-                .hamburgur-icon i{
-                position:absolute; inset:auto 0; height:2px; background:#333; border-radius:2px;
-                transform-origin:center; transition:transform .25s ease, opacity .2s ease, top .25s ease;
-                }
-                .hamburgur-icon i:nth-child(1){ top:0; }
-                .hamburgur-icon i:nth-child(2){ top:8px; }
-                .hamburgur-icon i:nth-child(3){ top:16px; }
-
-                /* ============== オーバーレイ層（全体） ============== */
-                .hamburgur-layer{ position:fixed; inset:0; z-index:1999; }
-
-                /* 背景 */
-                .hamburgur-backdrop{
-                position:absolute; inset:0;
-                background: linear-gradient(180deg, rgba(255,255,255,.7), rgba(255,255,255,.4));
-                backdrop-filter: blur(10px) saturate(110%);
-                opacity:0; transition:opacity .28s ease;
-                }
-                .hamburgur-layer.is-open .hamburgur-backdrop{ opacity:1; }
-
-                /* ============== メニュー本体（フルスクリーン） ============== */
-                .hamburgur-menu{
-                position:absolute; inset:0; display:flex; flex-direction:column; color:#fff;
-                transform:translateY(10px); opacity:0; transition:transform .3s ease, opacity .3s ease;
-                }
-                .hamburgur-layer.is-open .hamburgur-menu{ transform:none; opacity:1; }
-
-                .hamburgur-head{
-                height:60px; display:flex; align-items:center; justify-content:space-between;
-                padding:0 14px; /* ← 右端14pxでハンバーガーと揃える */
-                padding-top: 30px;
-                border-bottom:1px solid rgba(255,255,255,.12);
-                }
-                .hamburgur-title{ font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
-
-                /* Closeボタン：ハンバーガーと同サイズ＆右端位置を統一 */
-                .hamburgur-close{
-                width:46px; height:46px; display:grid; place-items:center;
-                background:transparent; border:none; color:#333; border-radius:10px; cursor:pointer;
-                -webkit-tap-highlight-color:transparent;
-                }
-                .hamburgur-close i{ font-size:22px; line-height:1; }
-                .hamburgur-close:active{ background:rgba(0,0,0,.06); }
-
-                /* リスト */
-                .hamburgur-list{
-                list-style:none; margin:0; padding:8px 10px 20px; overflow:auto; -webkit-overflow-scrolling:touch;
-                display:grid; gap:6px;
-                }
-                .hamburgur-list li{
-                --bg: rgba(255,255,255,.06);
-                --bd: rgba(255,255,255,.14);
-                border:1px solid var(--bd); background:var(--bg); border-radius:16px;
-                transform:translateY(10px); opacity:0;
-                animation: hbItem .45s cubic-bezier(.2,.7,.2,1) forwards;
-                }
-                .hamburgur-list li:nth-child(1){ animation-delay:.05s; }
-                .hamburgur-list li:nth-child(2){ animation-delay:.09s; }
-                .hamburgur-list li:nth-child(3){ animation-delay:.13s; }
-                .hamburgur-list li:nth-child(4){ animation-delay:.17s; }
-                .hamburgur-list li:nth-child(5){ animation-delay:.21s; }
-                .hamburgur-list li:nth-child(6){ animation-delay:.25s; }
-                .hamburgur-list li:nth-child(7){ animation-delay:.29s; }
-                .hamburgur-list li:nth-child(8){ animation-delay:.33s; }
-                .hamburgur-list li:nth-child(9){ animation-delay:.37s; }
-
-                @keyframes hbItem{ to{ transform:none; opacity:1; } }
-
-                .hamburgur-list a{
-                display:flex; align-items:baseline; gap:10px; justify-content:space-between;
-                padding:16px 14px; text-decoration:none; color:#333;
-                }
-                .hamburgur-list a b{ font-size:18px; letter-spacing:.02em; }
-                .hamburgur-list a small{ font-size:14px;}
-
-                /* いちばん目立たせたい項目 */
-                .hamburgur-list li.accent{
-                --bg: linear-gradient(180deg, rgba(255, 199, 2, 0.8), rgba(255, 199, 2, 0.8)0);
-                --bd: transparent;
-                }
-                .hamburgur-list li:has(a:active){ filter:brightness(1.05); }
-
-                /* フッター */
-                .hamburgur-foot{
-                margin-top:auto; padding:12px 16px; border-top:1px solid rgba(255,255,255,.12);
-                text-align:center; opacity:.7;
-                }
-
-                /* ハンバーガー → × 変形（開いている時） */
-                .hamburgur-btn[aria-expanded="true"] .hamburgur-icon i:nth-child(1){ top:8px; transform:rotate(45deg); }
-                .hamburgur-btn[aria-expanded="true"] .hamburgur-icon i:nth-child(2){ opacity:0; }
-                .hamburgur-btn[aria-expanded="true"] .hamburgur-icon i:nth-child(3){ top:8px; transform:rotate(-45deg); }
-
-                /* スマホではフォーカス装飾なし */
-                @media (pointer: coarse) {
-                .hamburgur a:focus, .hamburgur-btn:focus, .hamburgur-close:focus,
-                .hamburgur a:focus-visible, .hamburgur-btn:focus-visible, .hamburgur-close:focus-visible {
-                    outline: none !important;
-                }
-                }
-                /* タップ時の灰色ハイライトも消す */
-                .hamburgur a, .hamburgur button { -webkit-tap-highlight-color: transparent; }
-
-                /* 背景固定用 */
-                .hamburgur-noscr{ overflow:hidden; height:100dvh; }
-            </style>
-            <script>
-                (() => {
-                const btn = document.getElementById('hbBtn');
-                const layer = document.getElementById('hbLayer');
-                const menu = document.getElementById('hbMenu');
-                const closeBtn = document.getElementById('hbClose');
-                const list = document.getElementById('hbList');
-
-                const open = () => {
-                    layer.hidden = false;
-                    requestAnimationFrame(() => {
-                    layer.classList.add('is-open');
-                    btn.setAttribute('aria-expanded', 'true');
-                    document.body.classList.add('hamburgur-noscr');
-                    // アニメ再起動
-                    list.querySelectorAll('li').forEach(li => {
-                        li.style.animation = 'none'; li.getBoundingClientRect(); li.style.animation = '';
-                    });
-                    });
-                };
-
-                const close = () => {
-                    const items = Array.from(list.querySelectorAll('li')).reverse();
-                    items.forEach((li, idx) => {
-                    li.style.animation = 'none'; li.getBoundingClientRect();
-                    li.style.animation = `hbItem .35s cubic-bezier(.2,.7,.2,1) reverse forwards`;
-                    li.style.animationDelay = `${idx * 0.04}s`;
-                    });
-                    btn.setAttribute('aria-expanded', 'false');
-                    layer.classList.remove('is-open');
-                    const total = items.length * 40 + 350;
-                    setTimeout(() => {
-                    layer.hidden = true;
-                    document.body.classList.remove('hamburgur-noscr');
-                    items.forEach(li => { li.style.animationDelay = ''; });
-                    }, total);
-                };
-
-                btn.addEventListener('click', () => (btn.getAttribute('aria-expanded') === 'true') ? close() : open());
-                closeBtn.addEventListener('click', close);
-                layer.addEventListener('click', (e) => { if (e.target === layer || e.target.id === 'hbBackdrop') close(); });
-                document.addEventListener('keydown', (e) => { if (!layer.hidden && e.key === 'Escape') close(); });
-                menu.addEventListener('click', (e) => { if (e.target.closest('a')) close(); });
-                window.addEventListener('resize', () => { if (!layer.hidden) close(); });
-                })();
-            </script>
-        </header>
+        <header id="header-mobile" class="mobile"></header>
         <div class="st-wrapper">
             <div class="top-logotype mobile">
-                <a href="/"><img src="/assets/marugotosai2025-logotype.svg" alt="まるごと祭2025"></a>
+                <a href="/2025"><img src="/2025/assets/marugotosai2025-logotype.svg" alt="まるごと祭2025"></a>
             </div>
             <div class="top-wrapper">
                 <div class="top-bg-image">
                     <div class="top-text">
-                        <img src="assets/marugotosai2025-headtext.svg" alt="Soul of Tech / つくることは、いきること。">
+                        <img src="/2025/assets/marugotosai2025-headtext.svg" alt="Soul of Tech / つくることは、いきること。">
                         <div class="top-subtext">
-                            <img src="assets/marugotosai2025-subtext.svg" alt="2025.10.25-10.26 / @神山まるごと高専">
+                            <img src="/2025/assets/marugotosai2025-subtext.svg" alt="2025.10.25-10.26 / @神山まるごと高専">
                         </div>
                     </div>
-                    <img class="mobile" src="assets/marugotosai2025-mainvisual-mobile.svg" alt="まるごと祭2025の背景画像">
+                    <img class="mobile" src="/2025/assets/marugotosai2025-mainvisual-mobile.svg" alt="まるごと祭2025の背景画像">
                     <svg class="desktop top-bg-image-inner" id="art" width="727" height="466" viewBox="0 0 727 466" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                         <filter id="figmaNoise" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB">
@@ -351,8 +146,8 @@
                 </div>
             </div>
             <div class="idx-date">
-                <img class="mobile" src="assets/date-mobile.svg" alt="開催日: 2025年10月25日(土)・26日(日)">
-                <img class="desktop" src="assets/date-desktop.svg" alt="開催日: 2025年10月25日(土)・26日(日)">
+                <img class="mobile" src="/2025/assets/date-mobile.svg" alt="開催日: 2025年10月25日(土)・26日(日)">
+                <img class="desktop" src="/2025/assets/date-desktop.svg" alt="開催日: 2025年10月25日(土)・26日(日)">
             </div>
             <div class="idx-alert hidden">
                 <a href="#">0.00 | 重要ニュース表示エリア（最小時最大18文字）</a>
@@ -414,24 +209,24 @@
                     <div class="center-container" style="background-color: #f5f5f5;">
                         <div class="marquee">
                             <div class="marquee__track" id="track">
-                            <img src="/assets/photo/top-marquee01.jpg" alt="">
-                            <img src="/assets/photo/top-marquee02.jpg" alt="">
-                            <img src="/assets/photo/top-marquee03.jpg" alt="">
-                            <img src="/assets/photo/top-marquee04.jpg" alt="">
-                            <img src="/assets/photo/top-marquee05.jpg" alt="">
-                            <img src="/assets/photo/top-marquee06.jpg" alt="">
-                            <img src="/assets/photo/top-marquee07.jpg" alt="">
-                            <img src="/assets/photo/top-marquee08.jpg" alt="">
-                            <img src="/assets/photo/top-marquee09.jpg" alt="">
-                            <img src="/assets/photo/top-marquee10.jpg" alt="">
-                            <img src="/assets/photo/top-marquee11.jpg" alt="">
-                            <img src="/assets/photo/top-marquee12.jpg" alt="">
-                            <img src="/assets/photo/top-marquee13.jpg" alt="">
-                            <img src="/assets/photo/top-marquee14.jpg" alt="">
-                            <img src="/assets/photo/top-marquee15.jpg" alt="">
-                            <img src="/assets/photo/top-marquee16.jpg" alt="">
-                            <img src="/assets/photo/top-marquee17.jpg" alt="">
-                            <img src="/assets/photo/top-marquee18.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee01.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee02.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee03.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee04.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee05.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee06.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee07.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee08.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee09.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee10.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee11.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee12.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee13.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee14.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee15.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee16.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee17.jpg" alt="">
+                            <img src="/2025/assets/photo/top-marquee18.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -456,7 +251,7 @@
                                 </div>
                             </div>
                             <div class="about-button-wrapper">
-                                <a class="about-button" href="/about/">
+                                <a class="about-button" href="/2025/about/">
                                     <div class="about-button-text">まるごと祭を知る</div>
                                     <div class="about-icon">
                                         <i class="fa-sharp fa-solid fa-arrow-right" style="color: #333333;"></i>
@@ -481,56 +276,56 @@
                             </div>
                             <div class="contents-list">
                                 <div class="contents-list-column two">
-                                    <a class="contents-list-column-item" href="/contents/#exhibition">
-                                        <img src="/assets/contents/exhibition/exhibition-main-16.png">
+                                    <a class="contents-list-column-item" href="/2025/contents/#exhibition">
+                                        <img src="/2025/assets/contents/exhibition/exhibition-main-16.png">
                                         <p class="title-big">EXHIBITION</p>
                                         <p class="jp-sub">テック展示</p>
                                     </a>
-                                    <a class="contents-list-column-item" href="/contents/#class">
-                                        <img src="/assets/contents/class/class-main-16.png">
+                                    <a class="contents-list-column-item" href="/2025/contents/#class">
+                                        <img src="/2025/assets/contents/class/class-main-16.png">
                                         <p class="title-big">CLASS</p>
                                         <p class="jp-sub">授業成果物</p>
                                     </a>
                                 </div>
                                 <div class="contents-list-column two">
-                                    <a class="contents-list-column-item" href="/contents/#become">
-                                        <img src="/assets/contents/become/become-main-16.png">
+                                    <a class="contents-list-column-item" href="/2025/contents/#become">
+                                        <img src="/2025/assets/contents/become/become-main-16.png">
                                         <p class="title-big">BECOME</p>
                                         <p class="jp-sub">全員高専生</p>
                                     </a>
-                                    <a class="contents-list-column-item" href="/contents/#installation">
-                                        <img src="/assets/contents/installation/installation-main-16.png">
+                                    <a class="contents-list-column-item" href="/2025/contents/#installation">
+                                        <img src="/2025/assets/contents/installation/installation-main-16.png">
                                         <p class="title-small">INSTALLATION</p>
                                         <p class="jp-sub">インスタレーション</p>
                                     </a>
                                 </div>
                                 <div class="contents-list-column two">
-                                    <a class="contents-list-column-item" href="/contents/#foods">
-                                        <img src="/assets/contents/foods/foods-main-16.png">
+                                    <a class="contents-list-column-item" href="/2025/contents/#foods">
+                                        <img src="/2025/assets/contents/foods/foods-main-16.png">
                                         <p class="title-big">FOODS</p>
                                         <p class="jp-sub">飲食</p>
                                     </a>
-                                    <a class="contents-list-column-item" href="/contents/#goods">
-                                        <img src="/assets/contents/goods/goods-main-16.png">
+                                    <a class="contents-list-column-item" href="/2025/contents/#goods">
+                                        <img src="/2025/assets/contents/goods/goods-main-16.png">
                                         <p class="title-big">GOODS</p>
                                         <p class="jp-sub">物販</p>
                                     </a>
                                 </div>
                                 <div class="contents-list-column two">
-                                    <a class="contents-list-column-item " href="/contents/#stage">
-                                        <img src="/assets/contents/stage/stage-main-16.png">
+                                    <a class="contents-list-column-item " href="/2025/contents/#stage">
+                                        <img src="/2025/assets/contents/stage/stage-main-16.png">
                                         <p class="title-big">STAGE</p>
                                         <p class="jp-sub">屋外ステージ</p>
                                     </a>
-                                    <a class="contents-list-column-item " href="/contents/#matsuri">
-                                        <img src="/assets/contents/matsuri/matsuri-main-16.png">
+                                    <a class="contents-list-column-item " href="/2025/contents/#matsuri">
+                                        <img src="/2025/assets/contents/matsuri/matsuri-main-16.png">
                                         <p class="title-big">MATSURI</p>
                                         <p class="jp-sub">地域の伝統芸能</p>
                                     </a>
                                 </div>
                                 <div class="contents-list-column">
-                                    <a class="contents-list-column-item half" href="/contents/kamiyamamarche">
-                                        <img src="/assets/contents/marche/marche-main-32.png">
+                                    <a class="contents-list-column-item half" href="/2025/contents/kamiyamamarche">
+                                        <img src="/2025/assets/contents/marche/marche-main-32.png">
                                         <p class="title-big">KAMIYAMA MARCHE</p>
                                         <p class="jp-sub">神山マルシェ</p>
                                     </a>
@@ -557,7 +352,7 @@
                             </div>
                             <div class="overview-contents">
                                 <div class="overview-logotype mask-bg">
-                                    <img src="/assets/marugotosai2025-logotype.svg" alt="まるごと祭2025">
+                                    <img src="/2025/assets/marugotosai2025-logotype.svg" alt="まるごと祭2025">
                                 </div>
                                 <hr class="overview-divider">
                                 <div class="overview-block overview-date">
@@ -580,7 +375,7 @@
                                         <p style="font-size: 24px; text-align: center;">HOME / OFFICE</p>
                                     </div>
                                     <div class="overview-button-wrapper">
-                                        <a class="overview-button" href="/access/">
+                                        <a class="overview-button" href="/2025/access/">
                                             <div class="overview-button-text">会場アクセスはこちら</div>
                                             <div class="overview-icon">
                                                 <i class="fa-sharp fa-solid fa-arrow-right" style="color: #fff;"></i>
@@ -658,21 +453,28 @@
             </div>
         </div>
         <div class="idx-ticket-float anim-box poyopoyo">
-            <a href="/tickets">
-                <img src="/assets/ticket-sticker-2.svg">
+            <a href="/2025/tickets">
+                <img src="/2025/assets/ticket-sticker-2.svg">
             </a>
         </div>
         <!-- Script -->
         <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.24/bundled/lenis.min.js"></script>
         <script>
-            fetch('/header.html')
+            fetch('/2025/header.html')
                 .then(response => response.text())
                 .then(html => {
                 document.getElementById('header').innerHTML = html;
                 });
         </script>
         <script>
-            fetch('/footer.html')
+            fetch('/2025/header-mobile.html')
+                .then(response => response.text())
+                .then(html => {
+                document.getElementById('header-mobile').innerHTML = html;
+                });
+        </script>
+        <script>
+            fetch('/2025/footer.html')
                 .then(response => response.text())
                 .then(html => {
                 document.querySelector('.st-footer').innerHTML = html;
