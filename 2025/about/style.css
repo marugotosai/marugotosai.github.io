@@ -1,0 +1,141 @@
+.st-main {
+    margin-top: 80px;
+    padding: 0 22px 0 22px;
+}
+
+.whatismarugotosai {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.whatismarugotosai img {
+    width: 70%;
+    margin-bottom: 32px;
+}
+
+.theme {
+    margin-top: 96px;
+}
+
+.theme img {
+    margin-top: 32px;
+    margin-bottom: 24px;
+    width: 90%;
+}
+
+.about-text-inner {
+    gap: 6px;
+    margin-bottom: 76px;
+}
+
+.about-text-inner p {
+    font-weight: 400;
+}
+
+.concept-title {
+    margin-top: 35px;
+    padding-top: 40px;
+    padding-bottom: 58px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.concept-title h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--color-text);
+    z-index: 1;
+}
+
+.concept-title p {
+    text-align: center;
+    font-size: 16px;
+    color: var(--color-text);
+    z-index: 1;
+}
+
+.concept-section-title-bg-wrapper {
+    margin: 0 auto;
+    position: absolute;
+    min-width: 120px;
+    z-index: 0;
+    left: calc(50% - 110px);
+}
+
+.concept-section-title-bg{
+    height: auto;
+    min-width: 220px;
+    position: relative;
+    bottom: 20px;
+}
+
+.kosen {
+    margin-top: 120px;
+}
+
+.kosen-title {
+    padding-top: 40px;
+    padding-bottom: 94px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.kosen-title h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    z-index: 1;
+}
+
+.kosen-title p {
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    z-index: 1;
+}
+
+.kosen-section-title-bg-wrapper {
+    margin: 0 auto;
+    position: absolute;
+    width: 70%;
+    min-width: 120px;
+    z-index: 0;
+}
+
+.kosen-section-title-bg {
+    width: 100%;
+    height: auto;
+    min-width: 340px;
+    position: relative;
+    top: 15px;
+}
+
+.kosen-inner {
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 96px;
+}
+
+.kosen-inner img {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.kosen-inner p {
+     line-height: 24px;
+}
+
+@media screen and (min-width: 1024px) {
+    .kosen-section-title-bg {
+        left: 50px;
+    }
+}

@@ -1,0 +1,292 @@
+.st-main-contents {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333333;
+    padding-bottom: 128px;
+}
+
+.st-main-contents h2 {
+    font-size: 42px;
+}
+
+.tickets-p {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.red {
+    color: #ff3800;
+}
+
+.qr-code {
+    width: 208px;
+    height: 208px;
+    margin-top: 16px;
+}
+
+.line-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.about {
+    margin-top: 132px;
+}
+
+.qa-title {
+    margin-top: 72px;
+    padding-top: 40px;
+    padding-bottom: 58px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.qa-title h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--color-text);
+    z-index: 1;
+}
+
+.qa-title p {
+    text-align: center;
+    font-size: 16px;
+    color: var(--color-text);
+    z-index: 1;
+}
+
+.qa-section-title-bg-wrapper {
+    margin: 0 auto;
+    position: absolute;
+    min-width: 120px;
+    z-index: 0;
+    left: calc(50% - 89px);
+}
+
+.qa-section-title-bg{
+    width: 178px;
+    height: auto;
+    position: relative;
+    bottom: 0px;
+}
+
+/* 各Q&Aブロック */
+.qa-item {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: box-shadow 0.25s ease;
+}
+
+.qa-item:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.qa-item.last {
+    margin-bottom: 16px;
+}
+
+/* Q部分 */
+.qa-question {
+  font-weight: 600;
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+/* A部分 */
+.qa-answer {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.qa-contentsarea {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+:root{
+    --acc-open: 360ms;
+    --acc-close: 240ms;
+    --acc-ease: cubic-bezier(.22,.7,.2,1);
+    --acc-drop: 12px; /* 下にどれだけ降ろすか */
+    --acc-icon-size: 14px;   /* ＋の長さ */
+    --acc-icon-stroke: 2px;  /* 線の太さ */
+    --acc-open: 360ms;       /* 既存の値を流用可 */
+    --acc-ease: cubic-bezier(.22,.7,.2,1);
+}
+
+.acc + .acc { border-top: none; }
+
+/* トリガー */
+.acc-trigger{
+    display:flex; align-items:center; justify-content:space-between;
+    inline-size:100%; text-align:left; gap:.75rem;
+    padding:14px 0; background:none; border:0; cursor:pointer; font:inherit;
+}
+.acc-trigger:focus-visible{ outline:2px solid #999; outline-offset:2px; }
+
+/* 親アイコン：全体回転用 */
+.acc-icon{
+  position: relative;
+  inline-size: 1.25em;
+  block-size: 1.25em;
+  flex: 0 0 auto;
+  transition: transform var(--acc-open) var(--acc-ease);
+  will-change: transform;
+}
+
+/* 横棒（常時表示＝マイナス線） */
+.acc-icon::before{
+  content:"";
+  position:absolute; left:50%; top:50%;
+  inline-size: var(--acc-icon-size);
+  block-size: var(--acc-icon-stroke);
+  background: currentColor;
+  border-radius: 1px;
+  transform: translate(-50%, -50%);
+}
+
+/* 縦棒（＋の縦線） */
+.acc-icon::after{
+  content:"";
+  position:absolute; left:50%; top:50%;
+  inline-size: var(--acc-icon-stroke);
+  block-size: var(--acc-icon-size);
+  background: currentColor;
+  border-radius: 1px;
+  transform-origin: 50% 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+  transition:
+    transform var(--acc-open) var(--acc-ease),
+    opacity   calc(var(--acc-open) * .9) linear;
+  will-change: transform, opacity;
+}
+
+/* ▼閉じている時だけ：ホバーで全体90°回転 */
+.acc-trigger:not([aria-expanded="true"]):hover .acc-icon,
+.acc-trigger:not([aria-expanded="true"]):focus-visible .acc-icon{
+  transform: rotate(90deg);
+}
+
+/* ▼開いた時：全体回転をリセットして水平に戻す */
+.acc-trigger[aria-expanded="true"] .acc-icon{
+  transform: rotate(0deg);
+}
+
+/* ▼開いた時：縦棒を縮めてフェードアウト */
+.acc-trigger[aria-expanded="true"] .acc-icon::after{
+  transform: translate(-50%, -50%) scaleY(0.05);
+  opacity: 0;
+}
+
+
+.st-main-inner h2 {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 16px 13px;
+}
+
+.st-main-inner h2 button {
+    padding: 0;
+}
+
+/* パネル本体（高さアニメはJSで block-size を px 指定） */
+.acc-panel{
+    overflow:hidden;
+    block-size:0;
+    opacity:0;
+    transition:
+    block-size var(--acc-open) var(--acc-ease),
+    opacity   calc(var(--acc-open) * .9) linear;
+    padding: 0 16px;
+}
+.acc-panel.is-open{ opacity:1; }
+
+/* 中身を“スルッ”と落とす */
+.acc-panel-inner{
+    transform: translateY(calc(-1 * var(--acc-drop)));
+    opacity:0;
+    transition:
+    transform var(--acc-open) var(--acc-ease),
+    opacity   calc(var(--acc-open) * .9) linear;
+}
+.acc-panel.is-open .acc-panel-inner{
+    transform: translateY(0);
+    opacity:1;
+}
+
+/* 閉じる時は少しキビキビ */
+.acc-panel.is-closing{
+    transition-duration: var(--acc-close);
+}
+.acc-panel.is-closing .acc-panel-inner{
+    transition-duration: var(--acc-close);
+}
+
+/* 低モーション配慮 */
+@media (prefers-reduced-motion: reduce){
+    .acc-panel, .acc-panel-inner, .acc-icon::before{ transition:none !important; }
+}
+
+.acc {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.acc h2 {
+    background-color: #f5f5f5;
+}
+
+.acc-background {
+    background-color: #f5f5f5;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.acc-background h2 {
+    border-radius: 8px;
+}
+
+.acc-panel-inner .head {
+    margin-top: 27px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.acc-panel-inner ul {
+    margin: 13.5px 0 27px 0;
+    display: grid;
+    gap: 13px;
+}
+
+.acc-panel-inner ul li {
+    list-style:disc;
+    padding-left: 6px;
+    margin-left: 24px;
+    font-size: 16px;
+}
+
+.acc-panel-inner .text {
+    margin-top: 13px;
+    font-size: 16px;
+}
+
+.qa-item a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: underline;
+}
