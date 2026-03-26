@@ -5,213 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>工事中です</title>
   <style>
-    :root {
-      --yellow: #ffd54f;
-      --black: #1f1f1f;
-      --bg1: #fffdf6;
-      --bg2: #fff3c4;
-      --accent: #ff8a00;
-      --white: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       min-height: 100vh;
       display: grid;
       place-items: center;
       font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
-      background:
-        repeating-linear-gradient(
-          -45deg,
-          var(--bg1),
-          var(--bg1) 24px,
-          var(--bg2) 24px,
-          var(--bg2) 48px
-        );
-      color: var(--black);
-      overflow: hidden;
-    }
-
-    .wrap {
-      width: min(92vw, 860px);
-      padding: 24px;
-      text-align: center;
-      position: relative;
+      background: #f7f7f7;
+      color: #222;
     }
 
     .card {
-      background: rgba(255,255,255,0.88);
-      backdrop-filter: blur(8px);
-      border: 6px solid var(--black);
-      border-radius: 28px;
-      padding: 40px 24px 32px;
-      box-shadow: 0 18px 0 rgba(31,31,31,0.12);
-      position: relative;
+      text-align: center;
+      padding: 40px 24px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      max-width: 520px;
+      width: 90%;
     }
 
-    .helmet {
-      font-size: clamp(3rem, 7vw, 5rem);
-      animation: bob 2.4s ease-in-out infinite;
-      display: inline-block;
-      margin-bottom: 8px;
+    .icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
     }
 
     h1 {
-      margin: 8px 0 16px;
-      font-size: clamp(2rem, 6vw, 4rem);
-      line-height: 1.1;
-      letter-spacing: 0.04em;
+      margin: 0 0 16px;
+      font-size: 2rem;
     }
 
-    .lead {
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
-      line-height: 1.8;
-      margin: 0 auto 20px;
-      max-width: 36em;
-    }
-
-    .highlight {
-      display: inline-block;
-      background: var(--yellow);
-      border: 3px solid var(--black);
-      border-radius: 999px;
-      padding: 8px 16px;
-      font-weight: 700;
-      transform: rotate(-2deg);
-      margin-bottom: 18px;
-    }
-
-    .status-board {
-      margin: 22px auto 0;
-      width: min(100%, 560px);
-      background: var(--black);
-      color: #8dff92;
-      border-radius: 18px;
-      padding: 18px 20px;
-      text-align: left;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    p {
+      margin: 0 0 12px;
+      line-height: 1.7;
       font-size: 0.95rem;
-      box-shadow: inset 0 0 0 3px rgba(255,255,255,0.06);
     }
 
-    .status-board div + div {
-      margin-top: 8px;
-    }
-
-    .blink {
-      animation: blink 1s steps(1) infinite;
-    }
-
-    .cones {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      margin-top: 24px;
-      font-size: clamp(2rem, 6vw, 3rem);
-    }
-
-    .tape {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%) rotate(-2deg);
-      top: -18px;
-      background: repeating-linear-gradient(
-        90deg,
-        #111,
-        #111 16px,
-        #ffd400 16px,
-        #ffd400 32px
-      );
-      color: #111;
-      font-weight: 900;
-      padding: 12px 24px;
-      border-radius: 999px;
-      border: 4px solid #111;
-      width: min(92%, 540px);
-      letter-spacing: 0.08em;
-      font-size: clamp(0.85rem, 2vw, 1rem);
-    }
-
-    .tiny {
-      margin-top: 18px;
-      opacity: 0.7;
-      font-size: 0.92rem;
-    }
-
-    .gear {
-      position: absolute;
-      font-size: clamp(2rem, 5vw, 3rem);
-      opacity: 0.15;
-      animation: spin 8s linear infinite;
-      user-select: none;
-    }
-
-    .gear.left {
-      top: 6%;
-      left: 4%;
-    }
-
-    .gear.right {
-      bottom: 8%;
-      right: 4%;
-      animation-direction: reverse;
-      animation-duration: 10s;
-    }
-
-    @keyframes bob {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-8px) rotate(-4deg); }
-    }
-
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @media (max-width: 520px) {
-      .card {
-        padding: 36px 18px 28px;
-      }
-      .status-board {
-        font-size: 0.84rem;
-      }
+    .small {
+      font-size: 0.8rem;
+      opacity: 0.6;
     }
   </style>
 </head>
 <body>
-  <div class="gear left">⚙️</div>
-  <div class="gear right">⚙️</div>
-
-  <main class="wrap">
-    <section class="card">
-      <div class="tape">UNDER CONSTRUCTION / ただいま全力で組み立て中</div>
-      <div class="helmet">👷</div>
-      <div class="highlight">ご安心ください、サボってはいません。</div>
-      <h1>工事中です</h1>
-      <p class="lead">
-        このページは現在、職人のこだわりと<br>
-        ちょっとしたカフェインによって鋭意制作中です。<br>
-        もうしばらくお待ちください。
-      </p>
-
-      <div class="status-board" aria-label="工事状況">
-        <div>&gt; ページ読み込み中... 完了</div>
-        <div>&gt; 見た目をいい感じに調整中...</div>
-        <div>&gt; バグを説得中... <span class="blink">_</span></div>
-        <div>&gt; 完成予想: "たぶんいい感じ"</div>
-      </div>
-
-      <div class="cones" aria-hidden="true">🚧 🔧 🚧</div>
-      <p class="tiny">※ ヘルメットは気合いで着用しています。</p>
-    </section>
-  </main>
+  <div class="card">
+    <div class="icon">🚧</div>
+    <h1>工事中です</h1>
+    <p>
+      このページは現在準備中です。<br>
+      もうしばらくお待ちください。
+    </p>
+    <p class="small">ちゃんと作ってます（たぶん）。</p>
+  </div>
 </body>
 </html>
