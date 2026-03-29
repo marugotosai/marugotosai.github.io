@@ -1,33 +1,84 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>まるごと祭</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>まるごと祭 ARCHIVE</title>
+  <meta name="description" content="まるごと祭の開催アーカイブ一覧" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo">まるごと祭 ARCHIVE</a>
+      <nav class="nav">
+        <a href="#archive">ARCHIVE</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>まるごと祭</h1>
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
 
-  <ul>
-    <li>
-      <a href="https://2025.marugotosai.jp" target="_blank">
-        <img src="images/2025.jpg" alt="2025">
-        <span class="year">2025</span>
-        <span class="date">2025.10.25 - 10.26</span>
-      </a>
-    </li>
+      <div class="hero-inner">
+        <p class="hero-kicker">神山まるごと高専の文化祭</p>
+        <h1 class="hero-title">
+          まるごと祭<br />
+          ARCHIVE
+        </h1>
+        <p class="hero-text">
+          年ごとのまるごと祭を、ひとつの場所から。
+        </p>
+        <a href="#archive" class="hero-button">VIEW ARCHIVE</a>
+      </div>
+    </section>
 
-    <li>
-      <a href="https://2024.marugotosai.jp" target="_blank">
-        <img src="images/2024.jpg" alt="2024">
-        <span class="year">2024</span>
-        <span class="date">2024.10.26 - 10.27</span>
-      </a>
-    </li>
+    <section class="intro" id="archive">
+      <div class="section-inner">
+        <p class="section-label">PAST EVENTS</p>
+        <h2 class="section-title">開催アーカイブ</h2>
+      </div>
+    </section>
 
-  </ul>
+    <section class="archive">
+      <div class="section-inner archive-list">
 
+        <a class="archive-card" href="https://2025.marugotosai.jp" target="_blank" rel="noopener noreferrer">
+          <div class="archive-image-wrap">
+            <img src="images/2025.jpg" alt="まるごと祭2025 メインビジュアル" class="archive-image" />
+          </div>
+          <div class="archive-content">
+            <div class="archive-year-row">
+              <span class="archive-year">2025</span>
+              <span class="archive-arrow">↗</span>
+            </div>
+            <p class="archive-date">2025.10.25 — 2025.10.26</p>
+          </div>
+        </a>
+
+        <a class="archive-card" href="https://2024.marugotosai.jp" target="_blank" rel="noopener noreferrer">
+          <div class="archive-image-wrap">
+            <img src="images/2024.jpg" alt="まるごと祭2024 メインビジュアル" class="archive-image" />
+          </div>
+          <div class="archive-content">
+            <div class="archive-year-row">
+              <span class="archive-year">2024</span>
+              <span class="archive-arrow">↗</span>
+            </div>
+            <p class="archive-date">2024.10.26 — 2024.10.27</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-inner footer-inner">
+      <p>まるごと祭 ARCHIVE</p>
+    </div>
+  </footer>
 </body>
 </html>
