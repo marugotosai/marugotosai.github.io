@@ -19,16 +19,11 @@ html {
 body {
   margin: 0;
   font-family:
-    "Yu Gothic",
-    "Yu Gothic Medium",
     "Hiragino Sans",
-    "Noto Sans JP",
     system-ui,
     sans-serif;
-  font-weight: 400;
   color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  background: var(--bg);
 }
 
 img {
